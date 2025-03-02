@@ -1,0 +1,9 @@
+This directory is for storing image assets for the landing page.
+
+You can replace this file with actual images for:
+- Logo
+- Hero section background
+- Feature icons
+- Team photos
+- Client logos
+- etc.

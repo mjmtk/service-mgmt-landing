@@ -1,2 +1,2 @@
 # service-mgmt-landing
-Landing page for Service Management product
+Landing page for CommunIT product
