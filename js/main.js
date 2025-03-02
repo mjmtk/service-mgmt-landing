@@ -1,6 +1,12 @@
 // Custom JavaScript for CommunIT Landing Page
 
+// Initialize on regular DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
+  // Basic initialization that doesn't depend on components
+});
+
+// Initialize after all components are loaded
+document.addEventListener('componentsLoaded', function() {
   // Add animation classes to elements when they come into view
   const animateElements = document.querySelectorAll('.card, .section-title, .feature-item');
   
@@ -37,6 +43,19 @@ document.addEventListener('DOMContentLoaded', function() {
       // This is just a placeholder for server-side form submission
       // In a real implementation, you would handle the form submission via AJAX
       console.log('Form submitted');
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const formDataObj = {};
+      formData.forEach((value, key) => {
+        formDataObj[key] = value;
+      });
+      
+      // Log form data (in a real app, this would be sent to a server)
+      console.log('Form data:', formDataObj);
+      
+      // The form submission is handled by Alpine.js (@submit.prevent="formSubmitted = true")
+      // which shows the confirmation message
     });
   }
 });

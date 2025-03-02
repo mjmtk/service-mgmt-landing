@@ -1,0 +1,67 @@
+<!-- Contact Section -->
+<section id="contact" class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase section-title">Contact Us</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl section-title">
+                Ready to get started?
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto mb-8">
+                Request a demo or get in touch with our team to learn more about how our platform can help your organisation.
+            </p>
+        </div>
+        
+        <div class="mt-12 max-w-lg mx-auto">
+            <!-- Contact Form -->
+            <div id="contact-form-container" x-data="{ formSubmitted: false }">
+                <form id="contact-form" class="grid grid-cols-1 gap-y-6" x-show="!formSubmitted" @submit.prevent="formSubmitted = true">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <div class="mt-1">
+                            <input type="text" name="name" id="name" autocomplete="name" required
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <div class="mt-1">
+                            <input type="email" name="email" id="email" autocomplete="email" required
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="organization" class="block text-sm font-medium text-gray-700">Organization</label>
+                        <div class="mt-1">
+                            <input type="text" name="organization" id="organization" autocomplete="organization"
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <div class="mt-1">
+                            <textarea id="message" name="message" rows="4" required
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                            Request Demo
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Confirmation Message -->
+                <div x-show="formSubmitted" class="bg-white p-6 rounded-lg shadow-md text-center animate-fadeIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Thank you for your message!</h3>
+                    <p class="text-gray-600 mb-4">Your message has been received by Manaaki Care and we will be in touch with you shortly.</p>
+                    <button @click="formSubmitted = false" class="text-primary-600 hover:text-primary-800 font-medium">
+                        Send another message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
