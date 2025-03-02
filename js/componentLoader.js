@@ -529,10 +529,10 @@ const components = {
                         <a href="#contact" class="text-base text-gray-500 hover:text-gray-900">Contact</a>
                     </li>
                     <li>
-                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy Policy</a>
+                        <a href="privacy-policy.html" class="text-base text-gray-500 hover:text-gray-900">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="#support" class="text-base text-gray-500 hover:text-gray-900">Support Centre</a>
+                        <a href="support.html" class="text-base text-gray-500 hover:text-gray-900">Support Centre</a>
                     </li>
                 </ul>
             </div>
