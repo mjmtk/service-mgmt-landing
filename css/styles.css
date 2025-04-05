@@ -27,6 +27,45 @@ html {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+/* Organization & Product Branding */
+.org-logo {
+  color: #0369a1; /* Primary blue for organization */
+}
+
+.product-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: #e0f2fe; /* Light blue background */
+  color: #0369a1; /* Primary blue text */
+}
+
+.product-indicator {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #ffb3b3, #ffd9b3, #ffffb3, #b3ffb3, #b3b3ff, #d9b3ff, #ffb3ff);
+  margin-right: 0.375rem;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to right, #ffb3b3, #ffd9b3, #ffffb3, #b3ffb3, #b3b3ff, #d9b3ff, #ffb3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Organization section styling */
+.org-section {
+  border-left: 3px solid #0369a1;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
 /* Custom styles for form elements */
 input:focus, textarea:focus {
   border-color: #0284c7;
@@ -38,4 +77,43 @@ input:focus, textarea:focus {
   .hero-text {
     text-align: center;
   }
+  
+  /* Mobile header adjustments */
+  .org-product-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .product-separator {
+    display: none;
+  }
+  
+  .product-byline {
+    margin-left: 0;
+  }
+}
+
+/* Product family section */
+.product-family {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.product-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.product-card.current {
+  border-left: 3px solid;
+  border-image: linear-gradient(to bottom, #ffb3b3, #ffd9b3, #ffffb3, #b3ffb3, #b3b3ff, #d9b3ff, #ffb3ff) 1;
 }
