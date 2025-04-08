@@ -13,51 +13,179 @@
         
         <div class="mt-12 max-w-lg mx-auto">
             <!-- Contact Form -->
-            <div id="contact-form-container" x-data="{ formSubmitted: false }">
-                <form id="contact-form" class="grid grid-cols-1 gap-y-6" x-show="!formSubmitted" @submit.prevent="formSubmitted = true">
+            <div 
+                id="contact-form-container" 
+                x-data="{ 
+                    formSubmitted: false,
+                    isSubmitting: false,
+                    formErrors: {},
+                    submitForm(event) {
+                        // Reset previous errors
+                        this.formErrors = {};
+                        this.isSubmitting = true;
+
+                        // Client-side validation
+                        const form = event.target;
+                        const formData = new FormData(form);
+                        
+                        // Validate required fields
+                        const requiredFields = ['name', 'email', 'message'];
+                        requiredFields.forEach(field => {
+                            if (!formData.get(field)) {
+                                this.formErrors[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
+                            }
+                        });
+
+                        // Validate email format
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (formData.get('email') && !emailRegex.test(formData.get('email'))) {
+                            this.formErrors['email'] = 'Invalid email format';
+                        }
+
+                        // If there are validation errors, stop submission
+                        if (Object.keys(this.formErrors).length > 0) {
+                            this.isSubmitting = false;
+                            return;
+                        }
+
+                        // Proceed with form submission to Netlify
+                        fetch('/', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                            body: new URLSearchParams(formData).toString()
+                        })
+                        .then(() => {
+                            this.formSubmitted = true;
+                        })
+                        .catch(error => {
+                            console.error('Form submission error:', error);
+                            alert('There was an error submitting your form. Please try again.');
+                        })
+                        .finally(() => {
+                            this.isSubmitting = false;
+                        });
+                    }
+                }"
+            >
+                <!-- This hidden form is for Netlify bot detection -->
+                <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+                    <input type="text" name="name" />
+                    <input type="email" name="email" />
+                    <input type="text" name="organization" />
+                    <textarea name="message"></textarea>
+                </form>
+                
+                <!-- Actual form that users will interact with -->
+                <form 
+                    id="contact-form" 
+                    name="contact" 
+                    method="POST" 
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    class="grid grid-cols-1 gap-y-6" 
+                    x-show="!formSubmitted" 
+                    @submit.prevent="submitForm($event)"
+                >
+                    <!-- Required for Netlify Forms -->
+                    <input type="hidden" name="form-name" value="contact">
+                    
+                    <!-- Honeypot field to prevent spam -->
+                    <p class="hidden">
+                        <label>
+                            Don't fill this out if you're human: <input name="bot-field" />
+                        </label>
+                    </p>
+                    
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                         <div class="mt-1">
-                            <input type="text" name="name" id="name" autocomplete="name" required
-                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                autocomplete="name" 
+                                required
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md"
+                                :class="{'border-red-500': formErrors.name}"
+                            >
+                            <p x-show="formErrors.name" class="mt-1 text-sm text-red-500" x-text="formErrors.name"></p>
                         </div>
                     </div>
+                    
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                         <div class="mt-1">
-                            <input type="email" name="email" id="email" autocomplete="email" required
-                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                autocomplete="email" 
+                                required
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md"
+                                :class="{'border-red-500': formErrors.email}"
+                            >
+                            <p x-show="formErrors.email" class="mt-1 text-sm text-red-500" x-text="formErrors.email"></p>
                         </div>
                     </div>
+                    
                     <div>
                         <label for="organization" class="block text-sm font-medium text-gray-700">Organization</label>
                         <div class="mt-1">
-                            <input type="text" name="organization" id="organization" autocomplete="organization"
-                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
+                            <input 
+                                type="text" 
+                                name="organization" 
+                                id="organization" 
+                                autocomplete="organization"
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md"
+                            >
                         </div>
                     </div>
+                    
                     <div>
                         <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
                         <div class="mt-1">
-                            <textarea id="message" name="message" rows="4" required
-                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md"></textarea>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="4" 
+                                required
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md"
+                                :class="{'border-red-500': formErrors.message}"
+                            ></textarea>
+                            <p x-show="formErrors.message" class="mt-1 text-sm text-red-500" x-text="formErrors.message"></p>
                         </div>
                     </div>
+                    
                     <div>
-                        <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                            Request Demo
+                        <button 
+                            type="submit" 
+                            class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                            :disabled="isSubmitting"
+                            :class="{'opacity-75 cursor-not-allowed': isSubmitting}"
+                        >
+                            <span x-show="!isSubmitting">Request Demo</span>
+                            <span x-show="isSubmitting" class="flex items-center">
+                                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Submitting...
+                            </span>
                         </button>
                     </div>
                 </form>
                 
                 <!-- Confirmation Message -->
-                <div x-show="formSubmitted" class="bg-white p-6 rounded-lg shadow-md text-center animate-fadeIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <div class="text-center p-8 bg-green-50 rounded-lg" x-show="formSubmitted">
+                    <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">Thank you for your message!</h3>
-                    <p class="text-gray-600 mb-4">Your message has been received by Manaaki Care and we will be in touch with you shortly.</p>
-                    <button @click="formSubmitted = false" class="text-primary-600 hover:text-primary-800 font-medium">
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Thank you for your message!</h3>
+                    <p class="text-green-700">We'll get back to you as soon as possible.</p>
+                    <button 
+                        class="mt-4 btn btn-primary" 
+                        @click="formSubmitted = false"
+                    >
                         Send another message
                     </button>
                 </div>
@@ -65,3 +193,4 @@
         </div>
     </div>
 </section>
+<!-- End of Contact Section -->

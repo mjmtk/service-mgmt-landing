@@ -94,18 +94,7 @@ const components = {
                     
                     <!-- Separator -->
                     <span class="mx-2 text-gray-300">|</span>
-                    
-                    <!-- Product Logo -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 40 40" class="ml-1 mr-1">
-                        <circle cx="20" cy="20" r="18" fill="none" stroke="#0369a1" stroke-width="3"/>
-                        <path d="M12,20 Q20,12 28,20" fill="none" stroke="#0369a1" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                    
-                    <!-- Product Name in Blue -->
-                    <div class="flex flex-col">
-                        <span class="text-sm font-bold text-primary-700">Manaaki Care</span>
-                        <span class="text-xs text-gray-500 -mt-1">by Manaaki Tech</span>
-                    </div>
+                                
                 </div>
                 <nav class="hidden md:ml-10 md:flex md:space-x-10">
                     <div class="relative" x-data="{ open: false }">

@@ -1,4 +1,4 @@
-// Custom JavaScript for CommunIT Landing Page
+// Custom JavaScript for ManaakiTech Landing Page
 
 // Initialize on regular DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,2 +1,2 @@
 # service-mgmt-landing
-Landing page for CommunIT product
+Landing page for Manaaki Tech.
