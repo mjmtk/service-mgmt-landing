@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head id="head-component">
+    <!-- Head content will be loaded here -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manaaki Care | Whānau-Centered Management Platform</title>
+    <meta name="description" content="Manaaki Care: A comprehensive case management platform designed with Whānau-centered principles for social services organizations.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230369a1' opacity='0.9'/%3E%3Cpath d='M8,16 Q16,8 24,16' fill='none' stroke-width='3' stroke-linecap='round' stroke='url(%23rainbow)'/%3E%3Cdefs%3E%3ClinearGradient id='rainbow' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23ff0000'/%3E%3Cstop offset='16.67%25' stop-color='%23ff8000'/%3E%3Cstop offset='33.33%25' stop-color='%23ffff00'/%3E%3Cstop offset='50%25' stop-color='%2300ff00'/%3E%3Cstop offset='66.67%25' stop-color='%230000ff'/%3E%3Cstop offset='83.33%25' stop-color='%238000ff'/%3E%3Cstop offset='100%25' stop-color='%23ff00ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js via CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom styles -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .btn {
+                @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+            }
+            .btn-primary {
+                @apply bg-primary-600 text-white hover:bg-primary-700;
+            }
+            .btn-outline {
+                @apply border border-gray-300 hover:bg-gray-50;
+            }
+            .card {
+                @apply bg-white rounded-lg shadow-md p-6;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <div id="header-component"></div>
+    
+    <!-- Product Hero Section -->
+    <section class="bg-gradient-to-b from-primary-700 to-primary-800 text-white py-16 md:py-20 overflow-hidden relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'); background-size: 60px 60px;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <div class="inline-block px-3 py-1 rounded-full bg-white bg-opacity-20 text-white text-sm font-medium mb-4">
+                        Introducing Manaaki Care
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Whānau-Centered <br>Case Management</h1>
+                    <p class="text-xl md:text-2xl mb-8 text-white text-opacity-90">Empowering social service providers with culturally responsive tools to support whānau wellbeing.</p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="btn btn-primary bg-white text-primary-700 hover:bg-gray-100 px-6 py-3 text-base shadow-md hover:shadow-lg transform transition hover:-translate-y-0.5">Request Demo</a>
+                        <a href="#features" class="btn btn-outline text-white border-white hover:bg-primary-600 px-6 py-3 text-base">Explore Features</a>
+                    </div>
+                </div>
+                <div class="hidden md:block relative">
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-500 rounded-full filter blur-3xl opacity-20"></div>
+                    <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-primary-300 rounded-full filter blur-3xl opacity-20"></div>
+                    <div class="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm p-4 rounded-xl shadow-2xl border border-white border-opacity-20 transform rotate-1">
+                        <img src="images/WhanauOranga-Radar.png" alt="Manaaki Care Dashboard" class="rounded-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Overview -->
+    <section id="overview" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">A Case Management Solution Built for Aotearoa</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Designed with cultural responsiveness at its core, Manaaki Care empowers social service providers to deliver better outcomes for whānau.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/WhanauOranga-Radar.png" alt="Manaaki Care Whānau Oranga Radar" class="rounded-lg shadow-lg w-full object-cover">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Manaaki Care?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Culturally responsive design centered on Whānau wellbeing</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Streamlined case management workflows</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Comprehensive reporting and insights</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Secure and compliant with privacy regulations</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Features -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Key Features</h2>
+                <p class="mt-4 text-lg text-gray-600">Everything you need to manage cases effectively and support whānau.</p>
+            </div>
+            
+            <!-- Feature Showcase -->
+            <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Comprehensive Care Plans</h3>
+                        <p class="text-gray-600 mb-6">Create detailed, culturally responsive care plans that address the holistic needs of whānau. Our structured approach ensures nothing is overlooked while maintaining flexibility for individual needs.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Customizable templates</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Goal tracking and progress monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Collaborative planning tools</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 flex items-center justify-center">
+                        <img src="images/CarePlan.png" alt="Manaaki Care Plan Interface" class="rounded-lg shadow-md max-h-96 object-cover w-full" style="image-rendering: auto;">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Feature Showcase (Reversed) -->
+            <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="bg-gray-50 p-4 flex items-center justify-center md:order-1 order-2">
+                        <img src="images/WellbeingDomains.png" alt="Wellbeing Domains" class="rounded-lg shadow-md max-h-96 object-contain">
+                    </div>
+                    <div class="p-8 flex flex-col justify-center md:order-2 order-1">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Holistic Wellbeing Assessment</h3>
+                        <p class="text-gray-600 mb-6">Our assessment framework is built on Te Whare Tapa Whā and other culturally responsive models, ensuring a comprehensive view of wellbeing across all domains.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Culturally responsive assessment tools</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Strengths-based approach</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Visual progress tracking</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third Feature Showcase -->
+            <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Outcome Measurement</h3>
+                        <p class="text-gray-600 mb-6">Track and report on outcomes that matter, with customizable dashboards and reporting tools that help demonstrate impact and fulfill funding requirements.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Customizable reporting dashboards</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Export options for funding reports</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Trend analysis and insights</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 flex items-center justify-center">
+                        <img src="images/OutcomeMeasure-1.png" alt="Outcome Measurement Dashboard" class="rounded-lg shadow-md max-h-96 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="card hover:shadow-lg transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="[http://www.w3.org/2000/svg"](http://www.w3.org/2000/svg") class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Whānau-Centered Approach</h3>
+                    <p class="text-gray-600">Holistic case management that puts whānau at the center, supporting cultural needs and strengths-based approaches.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="card hover:shadow-lg transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="[http://www.w3.org/2000/svg"](http://www.w3.org/2000/svg") class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Case Management</h3>
+                    <p class="text-gray-600">Streamlined workflows for intake, assessment, planning, and service delivery with customizable templates.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="card hover:shadow-lg transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="[http://www.w3.org/2000/svg"](http://www.w3.org/2000/svg") class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Reporting & Analytics</h3>
+                    <p class="text-gray-600">Comprehensive reporting tools to track outcomes, measure impact, and fulfill funding requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">What Our Clients Say</h2>
+                <p class="mt-4 text-lg text-gray-600">Organizations across Aotearoa trust Manaaki Care for their case management needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <svg xmlns="[http://www.w3.org/2000/svg"](http://www.w3.org/2000/svg") class="h-12 w-12 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Te Whare Hauora</h4>
+                            <p class="text-gray-600">Community Health Provider</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Manaaki Care has transformed how we support whānau. The cultural responsiveness built into the system helps us deliver services that truly meet the needs of our community."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="card border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <svg xmlns="[http://www.w3.org/2000/svg"](http://www.w3.org/2000/svg") class="h-12 w-12 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Aroha Family Services</h4>
+                            <p class="text-gray-600">Social Support Organization</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The reporting capabilities in Manaaki Care have saved us countless hours of administrative work. We can now focus more time on what matters most - supporting our families."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Flexible Pricing Options</h2>
+                <p class="mt-4 text-lg text-gray-600">Solutions tailored to organizations of all sizes.</p>
+            </div>
+
+
+            <!-- Interactive Pricing Tabs -->
+            <div class="mb-12 max-w-4xl mx-auto" x-data="{ activeTab: 'small' }">
+                <!-- Tab Navigation -->
+                <div class="flex flex-wrap border-b border-gray-200 mb-6">
+                    <button 
+                        @click="activeTab = 'small'" 
+                        :class="{ 'border-primary-500 text-primary-600': activeTab === 'small', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'small' }" 
+                        class="py-4 px-6 border-b-2 font-medium text-sm sm:text-base transition-colors duration-200 focus:outline-none"
+                    >
+                        Small Teams <span class="text-xs text-gray-500">(Up to 30 users)</span>
+                    </button>
+                    <button 
+                        @click="activeTab = 'midsize'" 
+                        :class="{ 'border-primary-500 text-primary-600': activeTab === 'midsize', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'midsize' }" 
+                        class="py-4 px-6 border-b-2 font-medium text-sm sm:text-base transition-colors duration-200 focus:outline-none"
+                    >
+                        Mid-Size Teams <span class="text-xs text-gray-500">(30-70 users)</span>
+                    </button>
+                    <button 
+                        @click="activeTab = 'enterprise'" 
+                        :class="{ 'border-primary-500 text-primary-600': activeTab === 'enterprise', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'enterprise' }" 
+                        class="py-4 px-6 border-b-2 font-medium text-sm sm:text-base transition-colors duration-200 focus:outline-none"
+                    >
+                        Enterprise <span class="text-xs text-gray-500">(Unlimited users)</span>
+                    </button>
+                </div>
+                
+                <!-- Small Teams Tab Content -->
+                <div x-show="activeTab === 'small'" class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-6 px-6">
+                        <h3 class="text-xl font-bold mb-2">Small Teams Pricing</h3>
+                        <p class="opacity-90">Perfect for organizations with up to 30 users</p>
+                    </div>
+                    
+                    <div class="bg-white p-6">
+                        <!-- Pricing Row -->
+                        <div class="grid grid-cols-2 gap-4 mb-8 border-b border-gray-200 pb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-semibold text-gray-700 mb-2">Standard User</div>
+                                <div class="text-3xl font-bold text-primary-600 mb-2">$20</div>
+                                <div class="text-sm text-gray-500">per user / month</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-semibold text-gray-700 mb-2">Pro User</div>
+                                <div class="text-3xl font-bold text-primary-600 mb-2">$30</div>
+                                <div class="text-sm text-gray-500">per user / month</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Features Comparison -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <!-- Feature Category -->
+                            <div class="font-semibold text-gray-800">Feature</div>
+                            <div class="text-center font-semibold text-gray-800">Standard</div>
+                            <div class="text-center font-semibold text-gray-800">Pro</div>
+                            
+                            <!-- Case Management -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Case Management</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Client Outcome Dashboard -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Client Outcome Dashboard</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Using Assessment Forms -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Using Assessment Forms</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Setup Assessment Forms -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Setup Assessment Forms</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Create Programs -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Create Programs</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Advanced Analytics -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Advanced Analytics</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Comprehensive Reports -->
+                            <div class="text-gray-700 py-2">Comprehensive Reports</div>
+                            <div class="text-center py-2">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mid-Size Teams Tab Content -->
+                <div x-show="activeTab === 'midsize'" class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-primary-700 to-primary-900 text-white py-6 px-6">
+                        <h3 class="text-xl font-bold mb-2">Mid-Size Teams Pricing</h3>
+                        <p class="opacity-90">Ideal for organizations with 30-70 users</p>
+                    </div>
+                    
+                    <div class="bg-white p-6">
+                        <!-- Pricing Row -->
+                        <div class="grid grid-cols-2 gap-4 mb-8 border-b border-gray-200 pb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-semibold text-gray-700 mb-2">Standard User</div>
+                                <div class="text-3xl font-bold text-primary-600 mb-2">$29</div>
+                                <div class="text-sm text-gray-500">per user / month</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-semibold text-gray-700 mb-2">Pro User</div>
+                                <div class="text-3xl font-bold text-primary-600 mb-2">$35</div>
+                                <div class="text-sm text-gray-500">per user / month</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Features Comparison -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <!-- Feature Category -->
+                            <div class="font-semibold text-gray-800">Feature</div>
+                            <div class="text-center font-semibold text-gray-800">Standard</div>
+                            <div class="text-center font-semibold text-gray-800">Pro</div>
+                            
+                            <!-- Case Management -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Case Management</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Client Outcome Dashboard -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Client Outcome Dashboard</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Using Assessment Forms -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Using Assessment Forms</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Setup Assessment Forms -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Setup Assessment Forms</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Create Programs -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Create Programs</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Advanced Analytics -->
+                            <div class="text-gray-700 py-2 border-b border-gray-100">Advanced Analytics</div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2 border-b border-gray-100">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Comprehensive Reports -->
+                            <div class="text-gray-700 py-2">Comprehensive Reports</div>
+                            <div class="text-center py-2">
+                                <svg class="h-5 w-5 text-gray-300 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <div class="text-center py-2">
+                                <svg class="h-5 w-5 text-primary-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Tab Content -->
+                <div x-show="activeTab === 'enterprise'" class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-primary-800 to-primary-900 text-white py-6 px-6">
+                        <h3 class="text-xl font-bold mb-2">Enterprise Solutions</h3>
+                        <p class="opacity-90">Tailored solutions for large organizations with unlimited users</p>
+                    </div>
+                    
+                    <div class="bg-white p-6">
+                        <!-- Pricing Row -->
+                        <div class="mb-8 border-b border-gray-200 pb-6 text-center">
+                            <div class="text-lg font-semibold text-gray-700 mb-2">Custom Pricing</div>
+                            <div class="text-3xl font-bold text-primary-600 mb-2">Contact Us</div>
+                            <div class="text-sm text-gray-500 max-w-md mx-auto">Our enterprise solutions are tailored to your organization's specific needs with flexible pricing options.</div>
+                        </div>
+                        
+                        <!-- Features -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-4">Enterprise Features</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <svg class="h-5 w-5 text-primary-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span>Mix of Standard and Pro users</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="h-5 w-5 text-primary-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span>Unlimited users</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="h-5 w-5 text-primary-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span>Dedicated support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-4">Additional Benefits</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <svg class="h-5 w-5 text-primary-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span>Custom integrations</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="h-5 w-5 text-primary-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span>On-premise option</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="h-5 w-5 text-primary-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span>Custom training and onboarding</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 text-center">
+                            <a href="#contact" class="btn btn-primary px-8 py-3 inline-block">Request Enterprise Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="bg-primary-700 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to transform your case management?</h2>
+            <p class="text-xl mb-8">Book a demo to see how Manaaki Care can help your organization.</p>
+            <a href="#contact" class="btn btn-primary bg-white text-primary-700 hover:bg-gray-100">Request Demo</a>
+        </div>
+    </section>
+    
+    <div id="contact-component"></div>
+    <div id="footer-component"></div>
+    
+    <!-- Component Loader -->
+    <script src="js/componentLoader.js?v=1"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load components
+            componentLoader.loadComponent('header-component', 'header-component');
+            componentLoader.loadComponent('contact-component', 'contact-component');
+            componentLoader.loadComponent('footer-component', 'footer-component');
+        });
+    </script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

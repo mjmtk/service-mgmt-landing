@@ -107,7 +107,7 @@ const components = {
                     <div x-show="open" @click.away="open = false" class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-xs sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-3 bg-white px-3 py-3 sm:gap-4 sm:p-4">
-                                <a href="#" class="flex items-start rounded-lg hover:bg-gray-50 -m-2 p-2 transition duration-150 ease-in-out">
+                                <a href="product.html" class="flex items-start rounded-lg hover:bg-gray-50 -m-2 p-2 transition duration-150 ease-in-out">
                                     <div class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-primary-500 text-white">
                                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -153,7 +153,7 @@ const components = {
                 </svg>
             </button>
             <div x-show="productsOpen" class="pl-3">
-                <a href="#" class="block px-2 py-1 text-sm font-medium text-primary-600 hover:bg-gray-50">Manaaki Care</a>
+                <a href="product.html" class="block px-2 py-1 text-sm font-medium text-primary-600 hover:bg-gray-50">Manaaki Care</a>
             </div>
             <a href="#features" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary-600 hover:bg-gray-50">Features</a>
             <a href="#benefits" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary-600 hover:bg-gray-50">Benefits</a>
