@@ -48,13 +48,21 @@
                             return;
                         }
 
+                        // Create encoded data for Netlify
+                        const encodedData = new URLSearchParams(formData).toString();
+                        
                         // Proceed with form submission to Netlify
                         fetch('/', {
                             method: 'POST',
-                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                            body: new URLSearchParams(formData).toString()
+                            headers: { 
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            },
+                            body: encodedData
                         })
-                        .then(() => {
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Form submission failed: ${response.status}`);
+                            }
                             this.formSubmitted = true;
                         })
                         .catch(error => {
@@ -81,7 +89,8 @@
                     name="contact" 
                     method="POST" 
                     data-netlify="true"
-                    data-netlify-honeypot="bot-field"
+                    netlify-honeypot="bot-field"
+                    action="/thank-you/"
                     class="grid grid-cols-1 gap-y-6" 
                     x-show="!formSubmitted" 
                     @submit.prevent="submitForm($event)"
