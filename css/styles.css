@@ -39,9 +39,9 @@ html {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Organization & Product Branding */
+/* Organisation & Product Branding */
 .org-logo {
-  color: #0369a1; /* Primary blue for organization */
+  color: #0369a1; /* Primary blue for organisation */
 }
 
 .product-badge {
@@ -71,7 +71,7 @@ html {
   color: transparent;
 }
 
-/* Organization section styling */
+/* Organisation section styling */
 .org-section {
   border-left: 3px solid #0369a1;
   padding-left: 1rem;
@@ -145,7 +145,7 @@ input:focus, textarea:focus {
   height: 10px;
 }
 
-/* Mobile optimizations */
+/* Mobile optimisations */
 @media (max-width: 640px) {
   .hero-text {
     text-align: center;
