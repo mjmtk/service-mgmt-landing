@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
-                <div class="flex-shrink-0 flex items-center">
+                <a href="/" class="flex-shrink-0 flex items-center">
                     <!-- Organization Logo -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" class="mr-2">
                         <circle cx="20" cy="20" r="18" fill="none" stroke="#0369a1" stroke-width="3"/>
@@ -11,31 +11,32 @@
                     </svg>
                     <!-- Organization Name -->
                     <span class="text-xl font-bold text-primary-700 mr-2">Manaaki Tech</span>
-                    
-                    <!-- Separator -->
-                    <span class="mx-2 text-gray-300">|</span>
-                    
-                    <!-- Product Logo -->
+                </a>
+                <!-- Separator -->
+                <span class="mx-2 text-gray-300">|</span>
+                
+                <!-- Product Logo and Name -->
+                <!-- <a href="/" class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 40 40" class="ml-1 mr-1">
                         <circle cx="20" cy="20" r="18" fill="none" stroke="#0369a1" stroke-width="3"/>
                         <path d="M12,20 Q20,12 28,20" fill="none" stroke="#0369a1" stroke-width="3" stroke-linecap="round"/>
                     </svg>
                     
-                    <!-- Product Name in Blue -->
                     <div class="flex flex-col">
                         <span class="text-sm font-bold text-primary-700">Manaaki Care</span>
                         <span class="text-xs text-gray-500 -mt-1">by Manaaki Tech</span>
                     </div>
-                </div>
+                </a> -->
                 <nav class="hidden md:ml-6 md:flex md:space-x-8">
-                    <a href="product.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Product</a>
                     <a href="#features" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Features</a>
                     <a href="#benefits" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Benefits</a>
+                    <a href="#pricing" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Pricing</a>
                     <a href="#contact" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Contact</a>
                 </nav>
             </div>
-            <div class="hidden md:flex items-center">
-                <a href="#contact" class="btn btn-primary">Request Demo</a>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="/support.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Support</a>
+                <a href="/contact.html" class="btn btn-primary">Request Demo</a>
             </div>
             
             <!-- Mobile menu button -->
@@ -54,36 +55,45 @@
             </div>
         </div>
     </div>
-    
-    <!-- Mobile menu, show/hide based on menu state -->
+
+    <!-- Mobile menu -->
     <div x-show="mobileMenuOpen" class="md:hidden" id="mobile-menu" style="display: none;">
         <div class="pt-2 pb-3 space-y-1 border-t border-gray-200">
             <!-- Organization Info -->
             <div class="px-4 py-2 flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 40 40" class="mr-2">
-                    <circle cx="20" cy="20" r="18" fill="none" stroke="#0369a1" stroke-width="3"/>
-                    <path d="M12,20 Q20,12 28,20" fill="none" stroke="#0369a1" stroke-width="3" stroke-linecap="round"/>
-                </svg>
-                <span class="text-sm font-medium text-primary-700">Manaaki Tech</span>
-            </div>
-            
-            <!-- Product Info -->
-            <div class="px-4 py-2 flex items-center border-l-2 ml-4 border-primary-200">
-                <span class="inline-block w-2 h-2 rounded-full bg-primary-700 mr-2"></span>
-                <span class="text-sm font-medium text-primary-700">Manaaki Care</span>
-            </div>
-            
-            <!-- Navigation Links -->
-            <a href="product.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Product</a>
-            <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Features</a>
-            <a href="#benefits" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Benefits</a>
-            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</a>
-            
-            <!-- CTA Button -->
-            <div class="px-4 py-2">
-                <a href="#contact" class="block w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700">
-                    Request Demo
+                <a href="/" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 40 40" class="mr-2">
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="#0369a1" stroke-width="3"/>
+                        <path d="M12,20 Q20,12 28,20" fill="none" stroke="#0369a1" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span class="text-xl font-bold text-primary-700">Manaaki Tech</span>
                 </a>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <!-- <a href="/" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Product</a> -->
+            <a href="#features" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Features</a>
+            <a href="#benefits" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Benefits</a>
+            <a href="#pricing" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Pricing</a>
+            <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Contact</a>
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-200">
+            <div class="px-4">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-10 w-10 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <div class="text-base font-medium text-gray-800">Request Demo</div>
+                        <div class="text-sm font-medium text-gray-500">Get in touch</div>
+                    </div>
+                </div>
+                <div class="mt-3 space-y-1">
+                    <a href="/support.html" class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Support</a>
+                    <a href="/contact.html" class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Contact us</a>
+                </div>
             </div>
         </div>
     </div>

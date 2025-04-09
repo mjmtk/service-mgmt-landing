@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Background Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            color: #1a5a9a;
+        }
+        
+        .container {
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .hero-generator {
+            margin-bottom: 30px;
+        }
+        
+        .hero-preview {
+            width: 100vw;
+            height: 500px;
+            background: linear-gradient(to bottom, #1a5a9a, #0c4a8a);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            margin-left: calc(-50vw + 50%);
+            left: 0;
+        }
+        
+        .svg-icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        }
+        
+        /* Different shades of white */
+        .white-shade-1 {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+            opacity: 0.7;
+        }
+        
+        .white-shade-2 {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(95%);
+            opacity: 0.8;
+        }
+        
+        .white-shade-3 {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+            opacity: 0.9;
+        }
+        
+        .white-shade-4 {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(105%) contrast(105%);
+            opacity: 1;
+        }
+        
+        .instructions {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background-color: #1a5a9a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0c4a8a;
+        }
+        
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .slider-container label {
+            min-width: 150px;
+        }
+        
+        input[type="range"] {
+            flex-grow: 1;
+            max-width: 300px;
+        }
+        
+        .value-display {
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .mock-content {
+            position: relative;
+            z-index: 10;
+            padding: 30px;
+            color: white;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .mock-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .mock-subtitle {
+            font-size: 24px;
+            opacity: 0.9;
+            color: #4ade80; /* green-500 */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .mock-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hero Background Generator</h1>
+        
+        <div class="instructions">
+            <h2>Instructions:</h2>
+            <ol>
+                <li>This page creates a full-size hero background with SVG icons arranged in a pattern.</li>
+                <li>Adjust the sliders to customize the number of icons, their size, and opacity.</li>
+                <li>Click <strong>Regenerate Pattern</strong> to try different arrangements.</li>
+                <li>When you're satisfied with the background, take a screenshot of the entire hero preview.</li>
+                <li>Save the screenshot as <code>hero-background.jpg</code> in your <code>images</code> folder.</li>
+            </ol>
+        </div>
+        
+        <div class="hero-generator">
+            <h2>Controls</h2>
+            
+            <div class="controls-panel">
+                <div class="slider-container">
+                    <label for="iconCount">Number of Icons:</label>
+                    <input type="range" id="iconCount" min="10" max="100" value="30" step="5">
+                    <span class="value-display" id="iconCountValue">30</span>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="iconSize">Icon Size (px):</label>
+                    <input type="range" id="iconSize" min="20" max="80" value="40" step="5">
+                    <span class="value-display" id="iconSizeValue">40</span>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="opacity">Opacity:</label>
+                    <input type="range" id="opacity" min="0.1" max="1" value="0.8" step="0.1">
+                    <span class="value-display" id="opacityValue">0.8</span>
+                </div>
+                
+                <div class="controls">
+                    <button id="regenerateBtn">Regenerate Pattern</button>
+                    <button id="toggleContentBtn">Toggle Content</button>
+                </div>
+            </div>
+            
+            <h2>Hero Preview</h2>
+            <div class="hero-preview" id="heroPreview">
+                <!-- SVGs will be placed here by JavaScript -->
+                <div class="mock-content" id="mockContent">
+                    <div class="mock-title">Manaaki Care</div>
+                    <div class="mock-subtitle">Whānau-Centred Case Management Solution</div>
+                    <div class="mock-text">Empowering social service providers with culturally responsive tools to support whānau wellbeing.</div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>CSS to use in hero.html:</h3>
+                <pre><code>.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}</code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroPreview = document.getElementById('heroPreview');
+            const mockContent = document.getElementById('mockContent');
+            const regenerateBtn = document.getElementById('regenerateBtn');
+            const toggleContentBtn = document.getElementById('toggleContentBtn');
+            
+            // Sliders
+            const iconCountSlider = document.getElementById('iconCount');
+            const iconSizeSlider = document.getElementById('iconSize');
+            const opacitySlider = document.getElementById('opacity');
+            
+            // Value displays
+            const iconCountValue = document.getElementById('iconCountValue');
+            const iconSizeValue = document.getElementById('iconSizeValue');
+            const opacityValue = document.getElementById('opacityValue');
+            
+            const svgFiles = [
+                '../svg/beach-1955269.svg',
+                '../svg/boomerang-6466830.svg',
+                '../svg/didgeridoo-3023392.svg',
+                '../svg/fern-leaf-2266954.svg',
+                '../svg/koru-3821172.svg',
+                '../svg/koru-3821174.svg',
+                '../svg/koru-6070286.svg',
+                '../svg/sea-turtle-6070291.svg'
+            ];
+            
+            function generatePattern() {
+                // Get current values from sliders
+                const iconCount = parseInt(iconCountSlider.value);
+                const iconSize = parseInt(iconSizeSlider.value);
+                const opacity = parseFloat(opacitySlider.value);
+                
+                // Update value displays
+                iconCountValue.textContent = iconCount;
+                iconSizeValue.textContent = iconSize;
+                opacityValue.textContent = opacity.toFixed(1);
+                
+                // Clear existing SVGs
+                const existingIcons = heroPreview.querySelectorAll('.svg-icon');
+                existingIcons.forEach(icon => icon.remove());
+                
+                // Get container dimensions
+                const containerWidth = heroPreview.offsetWidth;
+                const containerHeight = heroPreview.offsetHeight;
+                
+                // Create SVG elements throughout the hero section
+                for (let i = 0; i < iconCount; i++) {
+                    const img = document.createElement('img');
+                    const svgIndex = Math.floor(Math.random() * svgFiles.length);
+                    img.src = svgFiles[svgIndex];
+                    img.classList.add('svg-icon');
+                    
+                    // Apply different white shades in a pattern
+                    const shadeClass = 'white-shade-' + ((i % 4) + 1);
+                    img.classList.add(shadeClass);
+                    
+                    // Set size
+                    img.style.width = iconSize + 'px';
+                    img.style.height = iconSize + 'px';
+                    
+                    // Set opacity
+                    img.style.opacity = opacity;
+                    
+                    // Position randomly but with some spacing
+                    const x = Math.random() * (containerWidth - iconSize);
+                    const y = Math.random() * (containerHeight - iconSize);
+                    
+                    img.style.left = x + 'px';
+                    img.style.top = y + 'px';
+                    heroPreview.appendChild(img);
+                }
+            }
+            
+            // Generate initial pattern
+            generatePattern();
+            
+            // Regenerate pattern when button is clicked
+            regenerateBtn.addEventListener('click', generatePattern);
+            
+            // Toggle content visibility
+            toggleContentBtn.addEventListener('click', function() {
+                mockContent.style.display = mockContent.style.display === 'none' ? 'block' : 'none';
+            });
+            
+            // Update pattern when sliders change
+            iconCountSlider.addEventListener('input', function() {
+                iconCountValue.textContent = this.value;
+            });
+            
+            iconSizeSlider.addEventListener('input', function() {
+                iconSizeValue.textContent = this.value;
+            });
+            
+            opacitySlider.addEventListener('input', function() {
+                opacityValue.textContent = parseFloat(this.value).toFixed(1);
+            });
+            
+            // Generate new pattern when sliders are released
+            iconCountSlider.addEventListener('change', generatePattern);
+            iconSizeSlider.addEventListener('change', generatePattern);
+            opacitySlider.addEventListener('change', generatePattern);
+        });
+    </script>
+</body>
+</html>

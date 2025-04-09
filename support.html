@@ -58,8 +58,8 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- Header Component -->
-    <div id="header-component"></div>
+    <!-- Header Component (Support Version) -->
+    <div id="header-component" data-component="header-support"></div>
 
     <!-- Main Content -->
     <main class="py-12">
@@ -437,7 +437,7 @@
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="product.html" class="text-gray-600 hover:text-gray-900">Product Features</a></li>
+                        <li><a href="/" class="text-gray-600 hover:text-gray-900">Product Features</a></li>
                         <li><a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a></li>
                         <li><a href="privacy-policy.html" class="text-gray-600 hover:text-gray-900">Privacy Policy</a></li>
                         <li><a href="/" class="text-gray-600 hover:text-gray-900">Home</a></li>
@@ -459,14 +459,8 @@
     </footer>
 
     <!-- Load Components Script -->
-    <script src="js/componentLoader.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const componentLoader = new ComponentLoader('components/');
-            componentLoader.loadComponent('header-component', 'header-component');
-            // Assuming footer might also be a component in the future
-            // componentLoader.loadComponent('footer-component', 'footer-component'); 
-        });
-    </script>
+    <script src="js/componentLoader.js?v=1"></script>
+    <!-- Custom script removed as it was causing conflicts with the main component loader -->
+
 </body>
 </html>
