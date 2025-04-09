@@ -8,8 +8,9 @@
 
         <!-- Feature Showcase -->
         <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
-            <div class="grid md:grid-cols-2 gap-0">
-                <div class="p-8 flex flex-col justify-center">
+            <div class="grid md:grid-cols-5 gap-0">
+                <!-- Text content - 40% -->
+                <div class="p-8 ml-8 flex flex-col justify-center md:col-span-2">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Comprehensive Care Plans</h3>
                     <p class="text-gray-600 mb-6">Create detailed, culturally responsive care plans that address the
                         holistic needs of whānau. Our structured approach ensures nothing is overlooked while
@@ -41,10 +42,11 @@
                         </li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 p-4 flex items-center justify-center md:order-2 order-1">
-                    <div class="relative w-full h-96">
+                <!-- Image content - 60% -->
+                <div class="bg-white p-0 flex items-center justify-center md:order-2 order-1 overflow-hidden md:col-span-3">
+                    <div class="w-full">
                         <img src="/images/CarePlan.png" alt="Care Plan Screenshot"
-                            class="absolute inset-0 w-full h-full object-contain rounded-lg shadow-md">
+                            class="w-full max-h-[500px] object-contain hover:scale-105 transition-transform duration-300 cursor-zoom-in rounded-lg">
                     </div>
                 </div>
             </div>
@@ -52,12 +54,56 @@
 
          <!-- Second Feature Showcase (Reversed) -->
          <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
-            <div class="grid md:grid-cols-2 gap-0">
-                <div class="bg-gray-50 p-4 flex items-center justify-center md:order-1 order-2">
-                    <img src="/images/WellbeingDomains.png" alt="Wellbeing Domains" class="rounded-lg shadow-md max-h-96 object-contain">
+            <div class="grid md:grid-cols-2 gap-0 min-h-[500px]">
+                <div class="bg-white p-0 flex items-stretch md:order-1 order-2 overflow-hidden relative min-h-[500px] h-full w-full">
+                    <style>
+                        .survey-builder-container {
+                            position: absolute;
+                            top: 2%;
+                            left: 2%;
+                            width: auto;
+                            height: auto;
+                            max-width: 100%;
+                            max-height: 650px;
+                            opacity: 0.85;
+                            background: linear-gradient(to bottom right, white, white, transparent);
+                            z-index: 5;
+                            transition: all 0.5s ease-in-out;
+                        }
+                        
+                        .survey-builder-container:hover {
+                            opacity: 1;
+                            z-index: 20;
+                            max-height: 100%;
+                        }
+                        
+                        .survey-builder-image {
+                            width: auto;
+                            height: auto;
+                            max-height: 650px;
+                            max-width: 100%;
+                            object-fit: contain;
+                            transition: all 0.5s ease-in-out;
+                            cursor: pointer;
+                        }
+                        
+                        .survey-builder-container:hover .survey-builder-image {
+                            transform: scale(1.05);
+                        }
+                    </style>
+                    
+                    <div class="survey-builder-container">
+                        <img src="/images/SurveyBuilder.png" alt="Survey Builder" class="survey-builder-image">
+                    </div>
+                    <!-- Main foreground image positioned to end at bottom right -->
+                    <div id="wellbeingContainer" class="relative z-10 w-full h-full flex items-end justify-end p-4">
+                        <!-- Shadow element for depth effect -->
+                        <div class="absolute bottom-4 right-4 w-auto h-auto opacity-20 bg-gray-800 blur-md rounded-lg" style="max-width: 80%; max-height: 450px; transform: translate(8px, 8px);"></div>
+                        <img src="/images/WellbeingDomains.png" alt="Wellbeing Domains" class="relative w-auto max-h-[450px] object-scale-down hover:scale-105 transition-transform duration-300 cursor-zoom-in rounded-lg shadow-xl" style="max-width: 70%;">
+                    </div>
                 </div>
-                <div class="p-8 flex flex-col justify-center md:order-2 order-1">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Holistic Wellbeing Assessment</h3>
+                <div class="p-8 ml-4 flex flex-col justify-center md:order-2 order-1">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Measure Overall Service Impact</h3>
                     <p class="text-gray-600 mb-6">Our assessment framework is built on Te Whare Tapa Whā and other culturally responsive models, ensuring a comprehensive view of wellbeing across all domains.</p>
                     <ul class="space-y-2">
                         <li class="flex items-center">
@@ -126,9 +172,9 @@
         </div> -->
 
         <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
-            <div class="grid md:grid-cols-2 gap-0">
-                <div class="p-8 flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Outcome Measurement</h3>
+            <div class="grid md:grid-cols-2 gap-0 min-h-[400px]">
+                <div class="p-8 ml-8 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Whānau Wellbeing Journeys</h3>
                     <p class="text-gray-600 mb-6">Track and report on outcomes that matter, with customizable
                         frameworks that align with your organization's goals and funder requirements.</p>
                     <ul class="space-y-2">
@@ -158,10 +204,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 p-4 flex items-center justify-center md:order-2 order-1">
-                    <div class="relative w-full h-96">
+                <div class="bg-white p-0 flex items-center justify-center md:order-2 order-1 overflow-hidden">
+                    <div class="w-full">
                         <img src="images/OutcomeMeasure-1.png" alt="Outcomes Dashboard"
-                            class="absolute inset-0 w-full h-full object-contain rounded-lg shadow-md">
+                            class="w-full max-h-[600px] object-contain hover:scale-105 transition-transform duration-300 cursor-zoom-in rounded-lg">
                     </div>
                 </div>
             </div>
