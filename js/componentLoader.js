@@ -397,14 +397,14 @@ const components = {
         <!-- Organization Section -->
         <div class="flex flex-col md:flex-row justify-between mb-8">
             <div class="mb-8 md:mb-0 md:w-1/3">
-                <div class="flex items-center mb-4">
+                <a href="/" class="flex items-center mb-4">
                     <!-- Organization Logo -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 40 40" class="mr-2">
                         <circle cx="20" cy="20" r="18" fill="none" stroke="#0369a1" stroke-width="3"/>
                         <path d="M12,20 Q20,12 28,20" fill="none" stroke="#0369a1" stroke-width="3" stroke-linecap="round"/>
                     </svg>
                     <span class="text-lg font-bold text-primary-700">Manaaki Tech</span>
-                </div>
+                </a>
                 <p class="text-gray-500 text-sm">
                     Empowering social services with innovative technology solutions to improve community outcomes.
                 </p>
@@ -415,7 +415,7 @@ const components = {
                 <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Our Products</h3>
                 <ul class="space-y-2">
                     <li>
-                        <a href="#" class="text-base text-gray-500 hover:text-gray-900 flex items-center">
+                        <a href="/product.html" class="text-base text-gray-500 hover:text-gray-900 flex items-center">
                             <span class="inline-block w-2 h-2 rounded-full bg-primary-700 mr-2"></span>
                             Manaaki Care
                         </a>
@@ -428,7 +428,7 @@ const components = {
             <div class="md:w-1/3">
                 <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Quick Links</h3>
                 <div class="grid grid-cols-2 gap-4">
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Home</a>
+                    <a href="/" class="text-base text-gray-500 hover:text-gray-900">Home</a>
                     <a href="#features" class="text-base text-gray-500 hover:text-gray-900">Features</a>
                     <a href="#benefits" class="text-base text-gray-500 hover:text-gray-900">Benefits</a>
                     <a href="#contact" class="text-base text-gray-500 hover:text-gray-900">Contact</a>

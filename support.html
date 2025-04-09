@@ -58,30 +58,8 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- Header -->
-    <header class="bg-blue-50 shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <!-- Logo with eye shape -->
-                        <a href="index.html" class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" class="mr-2">
-                                <circle cx="20" cy="20" r="18" fill="none" stroke="#0284c7" stroke-width="3"/>
-                                <path d="M12,20 Q20,12 28,20" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
-                                <path d="M12,20 Q20,28 28,20" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                            <!-- Manaaki Care text -->
-                            <span class="text-2xl font-extrabold text-primary-600">Manaaki Care</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center mr-8">
-                    <a href="index.html" class="btn btn-primary px-6 py-3 text-base shadow-md hover:shadow-lg transform transition hover:-translate-y-0.5">Back to Home</a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Header Component -->
+    <div id="header-component"></div>
 
     <!-- Main Content -->
     <main class="py-12">
@@ -120,7 +98,7 @@
                             class="p-5 bg-white border-l border-r border-b rounded-b-lg shadow-md"
                         >
                             <p class="text-gray-600">
-                                Getting started with Manaaki Care is easy! Simply sign up for an account on our website, choose the plan that best fits your organization's needs, and follow our step-by-step onboarding process. Our team will guide you through setting up your account, configuring your workflows, and importing any existing client data.
+                                Getting started with Manaaki Care is easy! Choose the plan that best fits your organisation's needs, contact us for an account, and we will guide you through our step-by-step onboarding process. Our team will guide you through setting up your account, configuring your workflows, and importing any existing client data.
                             </p>
                             <p class="text-gray-600 mt-3">
                                 We also offer personalized onboarding sessions for new users to ensure you're comfortable with the platform and can start using it effectively right away.
@@ -187,7 +165,7 @@
                                 <li>Regular backups and disaster recovery procedures</li>
                             </ul>
                             <p class="text-gray-600 mt-3">
-                                Our Enterprise plan also offers additional security features including on-premises deployment options for organizations with specific security requirements.
+                                Our Enterprise plan also offers additional security features including on-premises deployment options for organisations with specific security requirements.
                             </p>
                         </div>
                     </div>
@@ -235,7 +213,7 @@
                             class="flex justify-between items-center w-full p-5 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
                             :class="{'bg-primary-50 border-l-4 border-primary-500': selected === 5}"
                         >
-                            <span class="text-lg font-semibold text-gray-900">Can I customise Manaaki Care for my organization's needs?</span>
+                            <span class="text-lg font-semibold text-gray-900">Can I customise Manaaki Care for my organisation's needs?</span>
                             <svg class="w-5 h-5 text-gray-500" :class="{'transform rotate-180': selected === 5}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
@@ -248,7 +226,7 @@
                             class="p-5 bg-white border-l border-r border-b rounded-b-lg shadow-md"
                         >
                             <p class="text-gray-600">
-                                Absolutely! Manaaki Care is designed to be highly customizable to meet the specific needs of different social and community service organizations. Customization options include:
+                                Absolutely! Manaaki Care is designed to be highly customisable to meet the specific needs of different social and community service organisations. Customisation options include:
                             </p>
                             <ul class="list-disc pl-6 mt-3 text-gray-600">
                                 <li>Custom fields and data collection forms</li>
@@ -258,7 +236,7 @@
                                 <li>Custom branding options</li>
                             </ul>
                             <p class="text-gray-600 mt-3">
-                                Professional and Enterprise plans offer more extensive customization options, and our team can provide guidance on best practices for configuring the system to match your organization's processes.
+                                Professional and Enterprise plans offer more extensive customisation options, and our team can provide guidance on best practices for configuring the system to match your organisation's processes.
                             </p>
                         </div>
                     </div>
@@ -268,12 +246,16 @@
             <!-- Contact Support Section -->
             <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Contact Support</h2>
-                
+                <div class="space-y-6">
+                    &nbsp;
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Support Options -->
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Support Options</h3>
-                        
+                        <div class="space-y-6">
+                            &nbsp;
+                        </div>
                         <div class="space-y-6">
                             <!-- Email Support -->
                             <div class="flex items-start">
@@ -314,7 +296,7 @@
                             </div>
                             
                             <!-- Live Chat -->
-                            <div class="flex items-start">
+                            <!-- <div class="flex items-start">
                                 <div class="flex-shrink-0">
                                     <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -329,7 +311,7 @@
                                         Hours: Monday-Friday, 9am-5pm NZST
                                     </p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     
@@ -369,7 +351,7 @@
                                 
                                 <div x-show="submitted" class="text-center p-4 bg-green-50 rounded-md">
                                     <svg class="h-12 w-12 text-green-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                     <p class="text-lg font-medium text-gray-900">Thank you!</p>
                                     <p class="text-gray-600">Your support request has been submitted. We'll get back to you as soon as possible.</p>
@@ -380,12 +362,12 @@
                 </div>
             </div>
             
-            <!-- Resources Section -->
+            <!-- Resources Section 
             <div class="mt-20">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Additional Resources</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Documentation -->
+                  
                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
                         <div class="rounded-full bg-primary-100 p-3 inline-flex mb-4">
                             <svg class="h-10 w-10 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -401,11 +383,11 @@
                         </a>
                     </div>
                     
-                    <!-- Video Tutorials -->
+            
                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
                         <div class="rounded-full bg-primary-100 p-3 inline-flex mb-4">
                             <svg class="h-10 w-10 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Video Tutorials</h3>
@@ -417,7 +399,7 @@
                         </a>
                     </div>
                     
-                    <!-- Webinars -->
+        
                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
                         <div class="rounded-full bg-primary-100 p-3 inline-flex mb-4">
                             <svg class="h-10 w-10 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -434,27 +416,57 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-blue-50 border-t border-gray-200 mt-20">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-                <div class="px-5 py-2">
-                    <a href="index.html" class="text-base text-gray-500 hover:text-gray-900">Home</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Manaaki Care</h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Empowering social services with intuitive client management software.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-gray-500"><span class="sr-only">Facebook</span><!-- FB icon --></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-500"><span class="sr-only">LinkedIn</span><!-- LinkedIn icon --></a>
+                    </div>
                 </div>
-                <div class="px-5 py-2">
-                    <a href="privacy-policy.html" class="text-base text-gray-500 hover:text-gray-900">Privacy Policy</a>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="product.html" class="text-gray-600 hover:text-gray-900">Product Features</a></li>
+                        <li><a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a></li>
+                        <li><a href="privacy-policy.html" class="text-gray-600 hover:text-gray-900">Privacy Policy</a></li>
+                        <li><a href="/" class="text-gray-600 hover:text-gray-900">Home</a></li>
+                    </ul>
                 </div>
-                <div class="px-5 py-2">
-                    <a href="support.html" class="text-base text-gray-500 hover:text-gray-900">Support Centre</a>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>Email: contact@manaakicare.com</li>
+                        <li>Phone: +64 (0) 27 555 0199</li>
+                        <li>Address: 123 Kiwi Street, Wellington, NZ</li>
+                    </ul>
                 </div>
-            </nav>
-            <p class="mt-8 text-center text-base text-gray-400">
-                &copy; 2025 Manaaki Care. All rights reserved.
-            </p>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-500">
+                &copy; 2024 Manaaki Tech. All rights reserved.
+            </div>
         </div>
     </footer>
+
+    <!-- Load Components Script -->
+    <script src="js/componentLoader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const componentLoader = new ComponentLoader('components/');
+            componentLoader.loadComponent('header-component', 'header-component');
+            // Assuming footer might also be a component in the future
+            // componentLoader.loadComponent('footer-component', 'footer-component'); 
+        });
+    </script>
 </body>
 </html>
