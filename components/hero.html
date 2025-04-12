@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section class="bg-gradient-to-b from-primary-700 to-primary-800 text-white py-16 md:py-20 overflow-hidden relative">
+<section class="bg-gradient-to-b from-primary-700 to-primary-800 text-white py-16 md:py-20 overflow-hidden relative" id="hero-section">
     <!-- Background Pattern with a single image -->
     <div class="absolute inset-0 hero-background">
         <!-- Single background image -->
@@ -21,13 +21,39 @@
                     <a href="#features" class="btn btn-outline text-white border-white hover:bg-primary-600 px-6 py-3 text-base">Explore Features</a>
                 </div>
             </div>
+            <!-- Desktop-only image that doesn't load on mobile -->
             <div class="hidden md:block relative">
                 <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-500 rounded-full filter blur-3xl opacity-20"></div>
                 <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-primary-300 rounded-full filter blur-3xl opacity-20"></div>
                 <div class="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm p-4 rounded-xl shadow-2xl border border-white border-opacity-20 transform rotate-1">
-                    <img src="images/WhanauOranga-Radar.png" alt="Manaaki Care Dashboard" class="rounded-lg w-full">
+                    <noscript class="loading-lazy">
+                        <img src="images/WhanauOranga-Radar.png" alt="Manaaki Care Dashboard" class="rounded-lg w-full">
+                    </noscript>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    // Function to load hero image only on desktop screens
+    function loadHeroImageOnDesktop() {
+        // Check if viewport width is 768px or larger (md breakpoint in Tailwind)
+        if (window.innerWidth >= 768) {
+            const heroImageContainer = document.querySelector('#hero-section .loading-lazy');
+            if (heroImageContainer) {
+                // Replace noscript with the actual image
+                const imageHTML = heroImageContainer.innerHTML;
+                const parentDiv = heroImageContainer.parentNode;
+                heroImageContainer.remove();
+                parentDiv.innerHTML = imageHTML;
+            }
+        }
+    }
+
+    // Run on page load
+    window.addEventListener('DOMContentLoaded', loadHeroImageOnDesktop);
+    
+    // Also run on resize in case of orientation change
+    window.addEventListener('resize', loadHeroImageOnDesktop);
+</script>
