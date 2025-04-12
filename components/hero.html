@@ -26,34 +26,11 @@
                 <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-500 rounded-full filter blur-3xl opacity-20"></div>
                 <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-primary-300 rounded-full filter blur-3xl opacity-20"></div>
                 <div class="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm p-4 rounded-xl shadow-2xl border border-white border-opacity-20 transform rotate-1">
-                    <noscript class="loading-lazy">
-                        <img src="images/WhanauOranga-Radar.png" alt="Manaaki Care Dashboard" class="rounded-lg w-full">
-                    </noscript>
+                    <img src="images/WhanauOranga-Radar.png" alt="Manaaki Care Dashboard" class="rounded-lg w-full">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<script>
-    // Function to load hero image only on desktop screens
-    function loadHeroImageOnDesktop() {
-        // Check if viewport width is 768px or larger (md breakpoint in Tailwind)
-        if (window.innerWidth >= 768) {
-            const heroImageContainer = document.querySelector('#hero-section .loading-lazy');
-            if (heroImageContainer) {
-                // Replace noscript with the actual image
-                const imageHTML = heroImageContainer.innerHTML;
-                const parentDiv = heroImageContainer.parentNode;
-                heroImageContainer.remove();
-                parentDiv.innerHTML = imageHTML;
-            }
-        }
-    }
-
-    // Run on page load
-    window.addEventListener('DOMContentLoaded', loadHeroImageOnDesktop);
-    
-    // Also run on resize in case of orientation change
-    window.addEventListener('resize', loadHeroImageOnDesktop);
-</script>
+<!-- Hero component doesn't need lazy loading script as it's always visible -->
