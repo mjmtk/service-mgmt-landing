@@ -1,197 +1,91 @@
-<!-- Features Section -->
-<section id="features" class="py-16 bg-gray-50">
+<!-- Company Values & Approach Section -->
+<section id="features" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Key Features</h2>
-            <p class="mt-4 text-lg text-gray-600">Everything you need to manage cases effectively and support whānau.
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Manaaki Care?</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Our solution combines modern technology with deep cultural understanding to support meaningful connections with families and communities.
             </p>
         </div>
 
-        <!-- Feature Showcase -->
-        <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
-            <div class="grid md:grid-cols-5 gap-0">
-                <!-- Text content - 40% -->
-                <div class="p-8 ml-8 flex flex-col justify-center md:col-span-2">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Comprehensive Care Plans</h3>
-                    <p class="text-gray-600 mb-6">Create detailed, culturally responsive care plans that address the
-                        holistic needs of whānau. Our structured approach ensures nothing is overlooked while
-                        maintaining flexibility for individual needs.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Customisable assessment templates</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Goal tracking and progress monitoring</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Whānau-centered approach</span>
-                        </li>
-                    </ul>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cultural Responsiveness -->
+            <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
                 </div>
-                <!-- Image content - 60% -->
-                <div
-                    class="bg-white p-0 flex items-center justify-center md:order-2 order-1 overflow-hidden md:col-span-3">
-                    <div class="w-full">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
-                            data-src="/images/CarePlan.png" alt="Care Plan Screenshot"
-                            class="lazy-load w-full max-h-[500px] object-contain hover:scale-105 transition-transform duration-300 cursor-zoom-in rounded-lg">
-                    </div>
-                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Cultural Responsiveness</h3>
+                <p class="text-gray-600 mb-4">
+                    Built with cultural values and practices at the foundation, ensuring respectful and appropriate service delivery for diverse communities.
+                </p>
             </div>
-        </div>
 
-        <!-- Second Feature Showcase (Reversed) -->
-        <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
-            <div class="grid md:grid-cols-2 gap-0 min-h-[500px]">
-                <div
-                    class="bg-white p-0 flex items-stretch md:order-1 order-2 overflow-hidden relative min-h-[500px] h-full w-full">
-                    <style>
-                        .survey-builder-container {
-                            position: absolute;
-                            top: 2%;
-                            left: 2%;
-                            width: auto;
-                            height: auto;
-                            max-width: 100%;
-                            max-height: 650px;
-                            opacity: 0.85;
-                            background: linear-gradient(to bottom right, white, white, transparent);
-                            z-index: 5;
-                            transition: all 0.5s ease-in-out;
-                        }
-
-                        .survey-builder-container:hover {
-                            opacity: 1;
-                            z-index: 20;
-                            max-height: 100%;
-                        }
-
-                        .survey-builder-image {
-                            width: auto;
-                            height: auto;
-                            max-height: 650px;
-                            max-width: 100%;
-                            object-fit: contain;
-                            transition: all 0.5s ease-in-out;
-                            cursor: pointer;
-                        }
-
-                        .survey-builder-container:hover .survey-builder-image {
-                            transform: scale(1.05);
-                        }
-                    </style>
-
-                    <div class="survey-builder-container">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
-                            data-src="/images/SurveyBuilder.png" alt="Survey Builder"
-                            class="lazy-load survey-builder-image">
-                    </div>
-                    <!-- Main foreground image positioned to end at bottom right -->
-                    <div id="wellbeingContainer" class="relative z-10 w-full h-full flex items-end justify-end p-4">
-                        <!-- Shadow element for depth effect -->
-                        <div class="absolute bottom-4 right-4 w-auto h-auto opacity-20 bg-gray-800 blur-md rounded-lg"
-                            style="max-width: 80%; max-height: 450px; transform: translate(8px, 8px);"></div>
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
-                            data-src="/images/WellbeingDomains.png" alt="Wellbeing Domains"
-                            class="lazy-load relative w-auto max-h-[450px] object-scale-down hover:scale-105 transition-transform duration-300 cursor-zoom-in rounded-lg shadow-xl"
-                            style="max-width: 70%;">
-                    </div>
+            <!-- Community-Centered -->
+            <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
                 </div>
-                <div class="p-8 ml-4 flex flex-col justify-center md:order-2 order-1">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Measure Overall Service Impact</h3>
-                    <p class="text-gray-600 mb-6">Our assessment framework is built on Te Whare Tapa Whā and other
-                        culturally responsive models, ensuring a comprehensive view of wellbeing across all domains.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Culturally responsive assessment tools</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Strengths-based approach</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Visual progress tracking</span>
-                        </li>
-                    </ul>
-                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Community-Centered</h3>
+                <p class="text-gray-600 mb-4">
+                    Designed by and for the community, understanding the unique needs of social service providers and the families they serve.
+                </p>
             </div>
-        </div>
-        <!-- Third Feature Showcase -->
-        <div class="mb-16 overflow-hidden rounded-xl shadow-2xl bg-white">
-            <div class="grid md:grid-cols-5 gap-0">
-                <!-- Text content - 40% -->
-                <div class="p-8 ml-8 flex flex-col justify-center md:col-span-2">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Whānau Wellbeing Journeys</h3>
-                    <p class="text-gray-600 mb-6">Track and report on outcomes that matter, with customisable
-                        frameworks that align with your organisation's goals and funder requirements.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Visual dashboards</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Progress tracking</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Customisable metrics</span>
-                        </li>
-                    </ul>
+
+            <!-- Secure & Compliant -->
+            <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
                 </div>
-                <!-- Image content - 60% -->
-                <div
-                    class="bg-white p-0 flex items-center justify-center md:order-2 order-1 overflow-hidden md:col-span-3">
-                    <div class="w-full">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
-                            data-src="/images/OutcomeMeasure-1.png" alt="Outcomes Dashboard"
-                            class="lazy-load w-full max-h-[500px] object-contain hover:scale-105 transition-transform duration-300 cursor-zoom-in rounded-lg">
-                    </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Secure & Compliant</h3>
+                <p class="text-gray-600 mb-4">
+                    Enterprise-grade security with full compliance to international privacy and data protection standards.
+                </p>
+            </div>
+
+            <!-- Streamlined Workflows -->
+            <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
                 </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Streamlined Workflows</h3>
+                <p class="text-gray-600 mb-4">
+                    Intuitive client journey management that reduces administrative burden and increases time with families.
+                </p>
+            </div>
+
+            <!-- Better Outcomes -->
+            <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Better Outcomes</h3>
+                <p class="text-gray-600 mb-4">
+                    Evidence-based tools and reporting that help demonstrate impact and improve service delivery.
+                </p>
+            </div>
+
+            <!-- Family-Focused -->
+            <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Family-Focused</h3>
+                <p class="text-gray-600 mb-4">
+                    Every feature designed to strengthen relationships and support holistic wellbeing of families.
+                </p>
             </div>
         </div>
     </div>
-
-
 </section>

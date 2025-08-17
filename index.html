@@ -12,7 +12,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230369a1' opacity='0.9'/%3E%3Cpath d='M8,16 Q16,8 24,16' fill='none' stroke-width='3' stroke-linecap='round' stroke='url(%23rainbow)'/%3E%3Cdefs%3E%3ClinearGradient id='rainbow' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23ff0000'/%3E%3Cstop offset='16.67%25' stop-color='%23ff8000'/%3E%3Cstop offset='33.33%25' stop-color='%23ffff00'/%3E%3Cstop offset='50%25' stop-color='%2300ff00'/%3E%3Cstop offset='66.67%25' stop-color='%230000ff'/%3E%3Cstop offset='83.33%25' stop-color='%238000ff'/%3E%3Cstop offset='100%25' stop-color='%23ff00ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23c2410c' opacity='0.9'/%3E%3Cpath d='M8,16 Q16,8 24,16' fill='none' stroke-width='3' stroke-linecap='round' stroke='url(%23rainbow)'/%3E%3Cdefs%3E%3ClinearGradient id='rainbow' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23ff0000'/%3E%3Cstop offset='16.67%25' stop-color='%23ff8000'/%3E%3Cstop offset='33.33%25' stop-color='%23ffff00'/%3E%3Cstop offset='50%25' stop-color='%2300ff00'/%3E%3Cstop offset='66.67%25' stop-color='%230000ff'/%3E%3Cstop offset='83.33%25' stop-color='%238000ff'/%3E%3Cstop offset='100%25' stop-color='%23ff00ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,16 +30,16 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
                         }
                     }
                 }
@@ -71,9 +71,9 @@
     <nav class="page-nav">
         <ul>
             <li><a href="#overview" class="nav-link">Overview</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#features" class="nav-link">Features</a></li>
             <li><a href="#benefits" class="nav-link">Benefits</a></li>
-            <li><a href="#pricing" class="nav-link">Pricing</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
@@ -92,47 +92,78 @@
                     core, Manaaki Care empowers social service providers to deliver better outcomes for whānau.</p>
             </div>
 
+            <div class="text-center max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8">Why Choose Manaaki Care?</h3>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Our solution combines modern technology with deep cultural understanding to support meaningful connections with families and communities.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Cultural Responsiveness</h4>
+                        <p class="text-sm text-gray-600">Built with cultural values at the foundation</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Community-Centered</h4>
+                        <p class="text-sm text-gray-600">Designed by and for the community</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Secure & Compliant</h4>
+                        <p class="text-sm text-gray-600">Enterprise-grade security standards</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Streamlined Workflows</h4>
+                        <p class="text-sm text-gray-600">Reduces administrative burden</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <img src="images/WhanauOranga-Radar.png" alt="Manaaki Care Whānau Oranga Radar"
-                        class="rounded-lg shadow-lg w-full object-cover">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Manaaki Tech</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Based in New Zealand, Manaaki Tech is committed to creating technology solutions that honor and support 
+                        diverse communities worldwide. Our name "Manaaki" reflects our core values of hospitality, care, and 
+                        respect for all people.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Manaaki Care represents our first step in revolutionizing how social services connect with and support 
+                        families globally, ensuring cultural values are embedded in every interaction.
+                    </p>
+                    <a href="#contact" class="btn btn-outline text-primary-700 border-primary-700 hover:bg-primary-50 px-6 py-3 text-base">
+                        Learn Our Story
+                    </a>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Manaaki Care?</h3>
-                    <ul class="space-y-4">
-                        <li class="flex">
-                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Culturally responsive design centred on Whānau wellbeing</span>
-                        </li>
-                        <li class="flex">
-                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Streamlined case management workflows</span>
-                        </li>
-                        <li class="flex">
-                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Comprehensive reporting and insights</span>
-                        </li>
-                        <li class="flex">
-                            <svg class="h-6 w-6 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Secure and compliant with privacy regulations</span>
-                        </li>
-                    </ul>
+                <div class="bg-gray-50 rounded-lg p-8 border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To empower social service providers worldwide with culturally responsive technology that strengthens 
+                        communities and improves outcomes for families everywhere.
+                    </p>
                 </div>
             </div>
         </div>
@@ -144,28 +175,28 @@
     <div id="benefits-component" data-component="benefits"></div>
 
     <!-- Pricing Section -->
-    <div id="pricing-component" data-component="pricing"></div>
+    <!-- <div id="pricing-component" data-component="pricing"></div> -->
 
     <!-- Contact Section -->
     <div id="contact-component" data-component="contact"></div>
 
     <!-- CTA Section -->
-    <section class="bg-primary-700 text-white py-16">
+    <!-- <section class="bg-primary-700 text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">
-                Ready to transform your service delivery?</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-8">Join the growing number of social service organisations using
-                Manaaki Care to improve outcomes for their communities.</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Service Delivery?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join social service providers worldwide who are already using Manaaki Care to deliver better outcomes for their communities.
+            </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#contact"
-                    class="btn btn-primary bg-white text-primary-700 hover:bg-gray-100 px-6 py-3 text-base shadow-md hover:shadow-lg transform transition hover:-translate-y-0.5">Request
-                    Demo</a>
-                <a href="support.html"
-                    class="btn btn-outline text-white border-white hover:bg-primary-600 px-6 py-3 text-base">Visit
-                    Support Centre</a>
+                <a href="#contact" class="btn btn-primary bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg shadow-md hover:shadow-lg transform transition hover:-translate-y-0.5">
+                    Request a Demo
+                </a>
+                <a href="support.html" class="btn btn-outline text-white border-white hover:bg-primary-600 px-8 py-3 text-lg bg-transparent">
+                    Contact Sales
+                </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <div id="footer-component" data-component="footer"></div>
 
@@ -184,7 +215,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Get all sections that should be tracked in the navigation
-            const sections = document.querySelectorAll('section[id], div[id="features-component"], div[id="benefits-component"], div[id="pricing-component"], div[id="contact-component"]');
+            const sections = document.querySelectorAll('section[id], div[id="features-component"], div[id="benefits-component"], div[id="contact-component"]');
             const navLinks = document.querySelectorAll('.nav-link');
             
             // Function to determine which section is currently in view

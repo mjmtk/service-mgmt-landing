@@ -7,8 +7,105 @@ html {
 
 /* Custom focus styles for accessibility */
 :focus {
-  outline: 2px solid #0284c7;
+  outline: 2px solid #ea580c;
   outline-offset: 2px;
+}
+
+/* Enhanced hero text panel for accessibility */
+.hero-text-panel {
+  /* Ensures minimum contrast ratio of 7:1 (WCAG AAA) */
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Improved text shadow for better readability */
+.hero-text-panel h1 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.hero-text-panel p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Enhanced hero brand name styling */
+.hero-brand-name {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Enhanced button accessibility */
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus {
+  outline: 3px solid #fb923c;
+  outline-offset: 2px;
+}
+
+/* Premium hero button styles */
+.hero-btn-primary {
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  box-shadow: 
+    0 20px 25px -5px rgba(249, 115, 22, 0.25),
+    0 10px 10px -5px rgba(249, 115, 22, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.hero-btn-primary:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  box-shadow: 
+    0 25px 35px -5px rgba(249, 115, 22, 0.35),
+    0 15px 15px -5px rgba(249, 115, 22, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.hero-btn-primary:focus {
+  outline: 3px solid #fb923c;
+  outline-offset: 3px;
+}
+
+.hero-btn-secondary {
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 
+    0 20px 25px -5px rgba(255, 255, 255, 0.1),
+    0 10px 10px -5px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.hero-btn-secondary:hover {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 
+    0 25px 35px -5px rgba(255, 255, 255, 0.15),
+    0 15px 15px -5px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.hero-btn-secondary:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
+}
+
+/* Responsive text panel adjustments */
+@media (max-width: 640px) {
+  .hero-text-panel {
+    padding: 1.5rem;
+    margin: 0 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .hero-background {
@@ -47,7 +144,7 @@ html {
 
 /* Organisation & Product Branding */
 .org-logo {
-  color: #0369a1; /* Primary blue for organisation */
+  color: #c2410c; /* Primary orange for organisation */
 }
 
 .product-badge {
@@ -57,8 +154,8 @@ html {
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
-  background-color: #e0f2fe; /* Light blue background */
-  color: #0369a1; /* Primary blue text */
+  background-color: #ffedd5; /* Light orange background */
+  color: #c2410c; /* Primary orange text */
 }
 
 .product-indicator {
@@ -79,14 +176,14 @@ html {
 
 /* Organisation section styling */
 .org-section {
-  border-left: 3px solid #0369a1;
+  border-left: 3px solid #c2410c;
   padding-left: 1rem;
   margin: 1.5rem 0;
 }
 
 /* Custom styles for form elements */
 input:focus, textarea:focus {
-  border-color: #0284c7;
+  border-color: #ea580c;
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
 }
 
@@ -123,7 +220,7 @@ input:focus, textarea:focus {
 }
 
 .page-nav a:hover {
-  color: #0369a1; /* Primary-700 */
+  color: #c2410c; /* Primary-700 */
   background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on hover */
 }
 
@@ -139,19 +236,19 @@ input:focus, textarea:focus {
 }
 
 .page-nav a:hover::before {
-  background-color: #0369a1; /* Primary-700 */
+  background-color: #c2410c; /* Primary-700 */
   width: 10px;
   height: 10px;
 }
 
 .page-nav a.active {
-  color: #0369a1; /* Primary-700 */
+  color: #c2410c; /* Primary-700 */
   font-weight: 600;
-  background-color: rgba(224, 242, 254, 0.8); /* Light blue background (primary-100) */
+  background-color: rgba(255, 237, 213, 0.8); /* Light orange background (primary-100) */
 }
 
 .page-nav a.active::before {
-  background-color: #0369a1; /* Primary-700 */
+  background-color: #c2410c; /* Primary-700 */
   width: 10px;
   height: 10px;
 }

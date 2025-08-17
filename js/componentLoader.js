@@ -10,7 +10,7 @@ class ComponentLoader {
       'hero': 2,
       'features': 3,
       'benefits': 4,
-      'pricing': 5,
+      // 'pricing': 5,
       'contact': 6,
       'footer': 7
     };
@@ -178,7 +178,7 @@ style.textContent = `
     height: 50px;
     border: 4px solid rgba(2, 132, 199, 0.1);
     border-radius: 50%;
-    border-top: 4px solid #0284c7;
+    border-top: 4px solid #ea580c;
     animation: spin 1s linear infinite;
     margin: 0 auto;
   }
